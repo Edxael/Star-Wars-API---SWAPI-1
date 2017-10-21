@@ -1,5 +1,6 @@
 import React from 'react'
 const srcAPI  = "https://swapi.co/api/people/1"
+import Logo from './img/one.jpg'
 
 export default class extends React.Component {
   state = { data: "", search: "", show: false }
@@ -32,8 +33,12 @@ export default class extends React.Component {
   render() {
     return(
       <div>
+        <div>
+          <img src={Logo} alt="Missing pic"/>
+        </div>
         <p>Stars Wars API.</p>
         <form onSubmit={this.infoGET}>
+          <p>Maraconda</p>
           <input type="text" value={this.state.search} onChange={ (eve) => { this.setState({ search: eve.target.value }) } }/>
           <input type="submit" value="Searc Character"/>
         </form>
